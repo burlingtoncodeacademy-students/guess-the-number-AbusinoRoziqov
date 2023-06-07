@@ -16,6 +16,7 @@ const rl = readline.createInterface({
 input: process.stdin,
 output: process.stdout
 });
+// Here is a greeting command 
 console.log('The Number Guessing Game is here; welcome! where I (the computer) would generate a number and you (the human) would attempt to guess it ');
 askGuess();
 
@@ -34,13 +35,14 @@ if (!isValidGuess(guess)) {
 }
 
 attempts++;
-
+// Here is the end of the game where computer asks if you want to play again
 if (guess === secretNumber) {
     console.log(`Congratulations! You guessed the secret number ${secretNumber} in ${attempts} attempts.`);
     rl.question('Play it again? (yes/no): ', (answer) => {
         if (answer.toLowerCase() === 'yes' || answer.toLowerCase() === 'y') {
             startGame(); // Restart the game
         } else {
+            console.log("Goodbye!");
             rl.close(); // Exit the program
         }
     });
